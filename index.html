@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVBORT - Professional Photography Backup System</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- ScrollReveal.js for animations -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        /* Custom styles for a minimal, grayscale, premium tech aesthetic */
+        :root {
+            --bg-color: #000000;
+            --container-bg: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #888888;
+            --border-color: #222222;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header link styles */
+        .nav-link {
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        .nav-link.active {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        /* CTA Button Style */
+        .cta-button {
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #cccccc;
+        }
+
+        /* Media container for images/videos */
+        .media-container {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Page transition styles */
+        .page {
+            display: none; /* Hidden by default */
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Added styles for customer testimonial and feature cards */
+        .testimonial-card {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-[var(--border-color)]">
+        <nav class="container mx-auto px-6 h-16 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" data-page="home" class="text-xl font-semibold text-white tracking-widest uppercase">AVBORT</a>
+            
+            <!-- Desktop Menu -->
+            <div id="nav-links" class="hidden md:flex items-center space-x-8">
+                <a href="#" data-page="home" class="nav-link active">Home</a>
+                <a href="#" data-page="about" class="nav-link">About</a>
+                <a href="#" data-page="solution" class="nav-link">Solution</a>
+                <a href="#" data-page="team" class="nav-link">Team</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#" data-page="contact" class="hidden md:block cta-button text-sm font-semibold px-5 py-2 rounded-full">
+                Contact
+            </a>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <!-- Updated hero content with specific AVBORT messaging -->
+                <p class="text-lg text-[var(--text-secondary)] mb-4 reveal">AVBORT Professional Backup System</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 reveal">Never Lose a Shot Again.</h1>
+                <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-12 reveal">
+                    Real-time, automated backup system for professional photographers. From lens to cloud, instantly.
+                </p>
+                <div class="media-container w-full max-w-6xl mx-auto h-[300px] md:h-[600px] rounded-2xl reveal mb-16">
+                    <!-- Space for hero product image/video -->
+                    <div class="text-center text-[var(--text-secondary)]">
+                        <div class="text-6xl mb-4">📸</div>
+                        <p>Hero Product Image/Video</p>
+                        <p class="text-sm">AVBORT System in Action</p>
+                    </div>
+                </div>
+
+                <!-- Added customer types section -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto reveal">
+                    <div class="feature-card text-center">
+                        <div class="text-3xl mb-3">💒</div>
+                        <h3 class="font-semibold text-white mb-2">Wedding</h3>
+                        <p class="text-sm text-[var(--text-secondary)]">Unrepeatable moments</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <div class="text-3xl mb-3">🦁</div>
+                        <h3 class="font-semibold text-white mb-2">Wildlife</h3>
+                        <p class="text-sm text-[var(--text-secondary)]">Extreme conditions</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <div class="text-3xl mb-3">🏢</div>
+                        <h3 class="font-semibold text-white mb-2">Commercial</h3>
+                        <p class="text-sm text-[var(--text-secondary)]">Studio efficiency</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <div class="text-3xl mb-3">📰</div>
+                        <h3 class="font-semibold text-white mb-2">Journalism</h3>
+                        <p class="text-sm text-[var(--text-secondary)]">Fast delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-40">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
+                    <div class="text-left reveal">
+                        <!-- Updated about content with specific problem statement -->
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">The Problem Every Pro Knows.</h2>
+                        <p class="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
+                            Every photographer has a story: a corrupted memory card, a failed hard drive, or gear lost in an accident. You spend days in the field accumulating terabytes of data on single points of failure.
+                        </p>
+                        <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
+                            The real work of sorting, backing up, and editing only begins hours or days later, creating massive bottlenecks and unacceptable risk for your business.
+                        </p>
+                    </div>
+                    <div class="media-container w-full h-96 rounded-2xl reveal">
+                        <!-- Space for problem illustration -->
+                        <div class="text-center text-[var(--text-secondary)]">
+                            <div class="text-6xl mb-4">⚠️</div>
+                            <p>Problem Illustration</p>
+                            <p class="text-sm">Photographer with failed equipment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Added customer testimonial section -->
+                <div class="testimonial-card max-w-4xl mx-auto text-center reveal">
+                    <div class="media-container w-24 h-24 rounded-full mx-auto mb-6">
+                        <!-- Space for customer photo -->
+                        <div class="text-center text-[var(--text-secondary)]">
+                            <div class="text-2xl">👤</div>
+                        </div>
+                    </div>
+                    <blockquote class="text-xl md:text-2xl text-white font-medium mb-6 leading-relaxed">
+                        "This will be the best product for me. As I shoot photos in the wild, my editor in the studio can edit those photos and publish them. Currently, I spend an extensive amount of time in the wild and only when I return to my studio in Delhi can I offload my data."
+                    </blockquote>
+                    <cite class="text-[var(--text-secondary)]">
+                        <strong class="text-white">Aarzoo Khurana</strong><br>
+                        Wildlife Photographer
+                    </cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Page -->
+        <section id="solution" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-32">
+                <div class="text-center max-w-3xl mx-auto mb-24">
+                    <!-- Updated solution header with 3-2-1 backup rule reference -->
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">Automated 3-2-1 Backup Rule.</h2>
+                    <p class="text-lg text-[var(--text-secondary)] reveal">
+                       Our two-part system creates three instant backups: one on your camera, one on portable storage, and one in the cloud. Your editor can start working on photos moments after you take them.
+                    </p>
+                </div>
+
+                <!-- Feature 1: Capture Module -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+                    <div class="media-container w-full h-96 md:h-[600px] rounded-2xl reveal">
+                        <!-- Space for Capture Module image -->
+                        <div class="text-center text-[var(--text-secondary)]">
+                            <div class="text-6xl mb-4">📷</div>
+                            <p>Capture Module</p>
+                            <p class="text-sm">Hot shoe mounted device</p>
+                        </div>
+                    </div>
+                    <div class="text-left reveal">
+                        <p class="font-semibold text-[var(--text-secondary)]">01</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">Capture Module</h3>
+                        <!-- Enhanced description with technical details -->
+                        <p class="text-lg text-[var(--text-secondary)] leading-relaxed mb-4">
+                            Small, rugged device that mounts to your camera's hot shoe and connects via USB-C. Instantly pulls a copy of every shot you take, eliminating the memory card as a single point of failure from the very first click.
+                        </p>
+                        <ul class="text-[var(--text-secondary)] space-y-2">
+                            <li>• Hot shoe mounting system</li>
+                            <li>• USB-C connectivity</li>
+                            <li>• Real-time image capture</li>
+                            <li>• Weather-resistant design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Network Relay -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+                    <div class="text-left reveal md:order-2">
+                         <p class="font-semibold text-[var(--text-secondary)]">02</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">Network Relay Station</h3>
+                        <!-- Enhanced description with backup details -->
+                        <p class="text-lg text-[var(--text-secondary)] leading-relaxed mb-4">
+                            The portable hub that receives images from the Capture Module and immediately creates three backups: one copy on a hot-swappable SSD for quick field review, a second on a redundant HDD, and a third uploaded to the cloud.
+                        </p>
+                        <ul class="text-[var(--text-secondary)] space-y-2">
+                            <li>• Hot-swappable SSD storage</li>
+                            <li>• Redundant HDD backup</li>
+                            <li>• Wi-Fi and 5G connectivity</li>
+                            <li>• Instant cloud synchronization</li>
+                        </ul>
+                    </div>
+                     <div class="media-container w-full h-96 md:h-[600px] rounded-2xl reveal md:order-1">
+                        <!-- Space for Network Relay image -->
+                        <div class="text-center text-[var(--text-secondary)]">
+                            <div class="text-6xl mb-4">📡</div>
+                            <p>Network Relay Station</p>
+                            <p class="text-sm">Portable backup hub</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Added workflow visualization section -->
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-8 reveal">How It Works</h3>
+                    <div class="media-container w-full max-w-5xl mx-auto h-[400px] rounded-2xl reveal">
+                        <!-- Space for workflow diagram -->
+                        <div class="text-center text-[var(--text-secondary)]">
+                            <div class="text-6xl mb-4">🔄</div>
+                            <p>Workflow Diagram</p>
+                            <p class="text-sm">Camera → Capture Module → Network Relay → Cloud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Page -->
+        <section id="team" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">The Team</h2>
+                <!-- Updated team description with expertise focus -->
+                <p class="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto mb-16 reveal">
+                    A well-rounded team of four with combined expertise in hardware, software, mechatronics, and system design. United by a passion for solving complex problems with elegant solutions.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center reveal">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                            <!-- Space for team member photo -->
+                            <div class="text-center text-[var(--text-secondary)]">
+                                <div class="text-4xl">👤</div>
+                            </div>
+                        </div>
+                        <!-- Updated with full names and detailed roles -->
+                        <h3 class="text-lg font-semibold text-white">Aditya Ravindra Dikonda</h3>
+                        <p class="text-[var(--text-secondary)] mb-2">Founder & CEO</p>
+                        <p class="text-sm text-[var(--text-secondary)]">Hardware, Software & Robotics</p>
+                    </div>
+                    <div class="text-center reveal" data-sr-delay="150">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                            <!-- Space for team member photo -->
+                            <div class="text-center text-[var(--text-secondary)]">
+                                <div class="text-4xl">👤</div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Krishna Yadav</h3>
+                        <p class="text-[var(--text-secondary)] mb-2">Co-founder & COO</p>
+                        <p class="text-sm text-[var(--text-secondary)]">Blockchain & Creative Direction</p>
+                    </div>
+                    <div class="text-center reveal" data-sr-delay="300">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                            <!-- Space for team member photo -->
+                            <div class="text-center text-[var(--text-secondary)]">
+                                <div class="text-4xl">👤</div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Aniket Teredesai</h3>
+                        <p class="text-[var(--text-secondary)] mb-2">CTO</p>
+                        <p class="text-sm text-[var(--text-secondary)]">System Design & Kernel Development</p>
+                    </div>
+                    <div class="text-center reveal" data-sr-delay="450">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                           <!-- Space for team member photo -->
+                           <div class="text-center text-[var(--text-secondary)]">
+                                <div class="text-4xl">👤</div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Bobby Mehta</h3>
+                        <p class="text-[var(--text-secondary)] mb-2">Hardware Head</p>
+                        <p class="text-sm text-[var(--text-secondary)]">VLSI & Communication Protocols</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-40 text-center min-h-[calc(100vh-8rem)] flex items-center justify-center">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Updated contact messaging for pilot program -->
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">Join Our Pilot Program.</h2>
+                    <p class="text-lg text-[var(--text-secondary)] mb-10 reveal">
+                        We're preparing for our pilot program with professional photographers. Get early access to AVBORT and help shape the future of photography workflow.
+                    </p>
+                    <div class="reveal mb-8">
+                        <a href="mailto:business@avbort.com" class="text-2xl md:text-3xl font-medium text-white hover:text-[var(--text-secondary)] transition-colors duration-300">
+                           business@avbort.com
+                        </a>
+                    </div>
+                    <!-- Added pricing information -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto reveal">
+                        <div class="feature-card text-center">
+                            <h3 class="text-xl font-semibold text-white mb-2">Wi-Fi Model</h3>
+                            <p class="text-3xl font-bold text-white mb-2">₹30,000</p>
+                            <p class="text-sm text-[var(--text-secondary)]">Local network backup</p>
+                        </div>
+                        <div class="feature-card text-center">
+                            <h3 class="text-xl font-semibold text-white mb-2">5G Model</h3>
+                            <p class="text-3xl font-bold text-white mb-2">₹60,000</p>
+                            <p class="text-sm text-[var(--text-secondary)]">Anywhere cloud backup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[var(--border-color)]">
+        <div class="container mx-auto px-6 py-6 text-center text-[var(--text-secondary)] text-sm">
+            <!-- Updated footer with patent pending status -->
+            <p>&copy; 2024 AVBORT. Patent Pending. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('a[data-page]');
+            const pages = document.querySelectorAll('.page');
+            const headerNavLinks = document.querySelectorAll('#nav-links .nav-link');
+
+            // Function to switch pages
+            const showPage = (pageId) => {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+
+                // Update active state in header navigation
+                headerNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                window.scrollTo(0, 0);
+
+                // Re-initialize ScrollReveal for the new page content
+                ScrollReveal().reveal('.reveal', {
+                    delay: 100,
+                    distance: '20px',
+                    origin: 'bottom',
+                    duration: 1000,
+                    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                    interval: 50,
+                    cleanup: true 
+                });
+            };
+
+            // Add click event listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.dataset.page;
+                    if (pageId) {
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // Initial page load setup
+            showPage('home');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVBORT - Instant Backup. Zero Failure.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- ScrollReveal.js for animations -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        /* Custom styles for a minimal, grayscale, premium tech aesthetic */
+        :root {
+            --bg-color: #000000;
+            --container-bg: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #888888;
+            --border-color: #222222;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header link styles */
+        .nav-link {
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        .nav-link.active {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        /* CTA Button Style */
+        .cta-button {
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #cccccc;
+        }
+
+        /* Media container for images/videos */
+        .media-container {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Page transition styles */
+        .page {
+            display: none; /* Hidden by default */
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-[var(--border-color)]">
+        <nav class="container mx-auto px-6 h-16 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" data-page="home" class="text-xl font-semibold text-white tracking-widest uppercase">AVBORT</a>
+            
+            <!-- Desktop Menu -->
+            <div id="nav-links" class="hidden md:flex items-center space-x-8">
+                <a href="#" data-page="home" class="nav-link active">Home</a>
+                <a href="#" data-page="about" class="nav-link">About</a>
+                <a href="#" data-page="solution" class="nav-link">Solution</a>
+                <a href="#" data-page="team" class="nav-link">Team</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#" data-page="contact" class="hidden md:block cta-button text-sm font-semibold px-5 py-2 rounded-full">
+                Contact
+            </a>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <p class="text-lg text-[var(--text-secondary)] mb-4 reveal">AVBORT Capture System</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 reveal">The Unbreakable Workflow.</h1>
+                <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-12 reveal">
+                    Real-time, automated backup for professional photographers. Never lose a shot again.
+                </p>
+                <div class="media-container w-full max-w-6xl mx-auto h-[300px] md:h-[600px] rounded-2xl reveal">
+                    <img src="https://placehold.co/1200x600/111111/444444?text=Your+Hero+Video+or+Image" alt="AVBORT Product Hero" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-40">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="text-left reveal">
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Designed for peace of mind.</h2>
+                        <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
+                            In photography, the workflow is defined by risk. Fragile cards, manual backups, and workflow delays create a constant state of anxiety. We experienced this firsthand and became obsessed with creating a seamless, zero-failure solution. AVBORT exists to eliminate risk, so you can focus entirely on your craft.
+                        </p>
+                    </div>
+                    <div class="media-container w-full h-96 rounded-2xl reveal">
+                         <img src="https://placehold.co/800x800/111111/444444?text=Image+of+a+Photographer+in+the+Field" alt="Photographer in the field" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Page -->
+        <section id="solution" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-32">
+                <div class="text-center max-w-3xl mx-auto mb-24">
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">From Lens to Cloud. Instantly.</h2>
+                    <p class="text-lg text-[var(--text-secondary)] reveal">
+                       Our two-part system integrates seamlessly with your existing gear to create an automated, redundant backup workflow from the moment you shoot.
+                    </p>
+                </div>
+
+                <!-- Feature 1: Capture Module -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+                    <div class="media-container w-full h-96 md:h-[600px] rounded-2xl reveal">
+                        <img src="https://placehold.co/800x1200/111111/444444?text=Capture+Module+Render" alt="Capture Module" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left reveal">
+                        <p class="font-semibold text-[var(--text-secondary)]">01</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">Capture Module</h3>
+                        <p class="text-lg text-[var(--text-secondary)] leading-relaxed">The lightweight module mounts to your camera's hot shoe and connects via USB-C. It captures a full-resolution copy of every image, instantly creating your first backup and eliminating the memory card as a single point of failure.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Network Relay -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="text-left reveal md:order-2">
+                         <p class="font-semibold text-[var(--text-secondary)]">02</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">Network Relay</h3>
+                        <p class="text-lg text-[var(--text-secondary)] leading-relaxed">The portable relay is the core of the system. It receives images from the Capture Module and automatically creates two more backups: one to an internal SSD and another to the cloud, making your work instantly accessible to your team, anywhere in the world.</p>
+                    </div>
+                     <div class="media-container w-full h-96 md:h-[600px] rounded-2xl reveal md:order-1">
+                        <img src="https://placehold.co/800x1200/111111/444444?text=Network+Relay+Render" alt="Network Relay" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Page -->
+        <section id="team" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">The Team</h2>
+                <p class="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto mb-16 reveal">
+                    A team of engineers and designers united by a passion for solving complex problems with elegant, functional hardware.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center reveal">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                            <img class="w-full h-full object-cover rounded-full" src="https://placehold.co/200x200/111111/444444?text=AD" alt="Aditya Ravindra Dikonda">
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Aditya R. Dikonda</h3>
+                        <p class="text-[var(--text-secondary)]">Founder & CEO</p>
+                    </div>
+                    <div class="text-center reveal" data-sr-delay="150">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                            <img class="w-full h-full object-cover rounded-full" src="https://placehold.co/200x200/111111/444444?text=KY" alt="Krishna Yadav">
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Krishna Yadav</h3>
+                        <p class="text-[var(--text-secondary)]">Co-founder & COO</p>
+                    </div>
+                    <div class="text-center reveal" data-sr-delay="300">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                            <img class="w-full h-full object-cover rounded-full" src="https://placehold.co/200x200/111111/444444?text=AT" alt="Aniket Teredesai">
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Aniket Teredesai</h3>
+                        <p class="text-[var(--text-secondary)]">CTO</p>
+                    </div>
+                    <div class="text-center reveal" data-sr-delay="450">
+                        <div class="media-container w-full rounded-full aspect-square mb-4">
+                           <img class="w-full h-full object-cover rounded-full" src="https://placehold.co/200x200/111111/444444?text=BM" alt="Bobby Mehta">
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Bobby Mehta</h3>
+                        <p class="text-[var(--text-secondary)]">Hardware Head</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="container mx-auto px-6 py-20 md:py-40 text-center min-h-[calc(100vh-8rem)] flex items-center justify-center">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">Let's build the future of photography.</h2>
+                    <p class="text-lg text-[var(--text-secondary)] mb-10 reveal">
+                        We are currently preparing for our pilot program. For early access, investment inquiries, or press information, please get in touch.
+                    </p>
+                    <div class="reveal">
+                        <a href="mailto:business@avbort.com" class="text-2xl md:text-3xl font-medium text-white hover:text-[var(--text-secondary)] transition-colors duration-300">
+                           business@avbort.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[var(--border-color)]">
+        <div class="container mx-auto px-6 py-6 text-center text-[var(--text-secondary)] text-sm">
+            <p>&copy; 2024 AVBORT. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('a[data-page]');
+            const pages = document.querySelectorAll('.page');
+            const headerNavLinks = document.querySelectorAll('#nav-links .nav-link');
+
+            // Function to switch pages
+            const showPage = (pageId) => {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+
+                // Update active state in header navigation
+                headerNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                window.scrollTo(0, 0);
+
+                // Re-initialize ScrollReveal for the new page content
+                ScrollReveal().reveal('.reveal', {
+                    delay: 100,
+                    distance: '20px',
+                    origin: 'bottom',
+                    duration: 1000,
+                    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                    interval: 50,
+                    cleanup: true 
+                });
+            };
+
+            // Add click event listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.dataset.page;
+                    if (pageId) {
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // Initial page load setup
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
