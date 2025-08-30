@@ -1,3 +1,5 @@
 app/
-orignal-website.html
+original-website.html
 *.json
+
+.DS_Stores
