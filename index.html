@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <link rel="icon" type="image/png" href="image/logo.PNG">
+    <link rel="icon" type="image/png" href="image/logo.PNG" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AVBORT - Professional Photography Backup System</title>
@@ -37,6 +37,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
+      
 
       /* Header link styles */
       .nav-link {
@@ -75,14 +76,15 @@
       .page {
         scroll-margin-top: 5rem;
       }
+      
+      /* Subtle hover animations for cards and media */
+      .feature-card, .testimonial-card, .media-container {
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+      .feature-card:hover, .testimonial-card:hover, .media-container:hover {
+        transform: translateY(-8px);
+        border-color: var(--text-secondary);
       }
 
       /* Added styles for customer testimonial and feature cards */
@@ -98,15 +100,22 @@
         border: 1px solid var(--border-color);
         border-radius: 1rem;
         padding: 1.5rem;
-        transition: border-color 0.3s ease;
       }
 
-      .feature-card:hover {
-        border-color: var(--text-secondary);
-      }
+
     </style>
   </head>
   <body class="antialiased">
+
+    <!-- Page Loader Animation -->
+    <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-black transition-opacity duration-500">
+      <div class="w-16 h-16 border-4 border-t-white border-gray-800 rounded-full animate-spin"></div>
+    </div>
+    
+    <!-- Custom Cursor Animation -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
     <!-- Header -->
     <header
       class="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-[var(--border-color)]"
@@ -118,9 +127,11 @@
         <a
           href="#"
           data-page="home"
-          class="text-xl font-semibold text-white tracking-widest uppercase"
-          >AVBORT</a
+          class="flex items-center space-x-3 text-xl font-semibold text-white tracking-widest uppercase"
         >
+          <img src="image/logo.PNG" alt="AVBORT Logo" class="h-8">
+          <span>AVBORT</span>
+        </a>
 
         <!-- Desktop Menu -->
         <div id="nav-links" class="hidden md:flex items-center space-x-8">
@@ -162,12 +173,7 @@
           <div
             class="media-container w-full max-w-6xl mx-auto h-[300px] md:h-[600px] rounded-2xl reveal mb-16"
           >
-            <!-- Space for hero product image/video -->
-            <div class="text-center text-[var(--text-secondary)]">
-              <div class="text-6xl mb-4">📸</div>
-              <p>Hero Product Image/Video</p>
-              <p class="text-sm">AVBORT System in Action</p>
-            </div>
+            <img src="image\IMG_2561.PNG" alt="AVBORT Professional Backup System in action" class="w-full h-full object-cover">
           </div>
 
           <!-- Added customer types section -->
@@ -230,22 +236,14 @@
               </p>
             </div>
             <div class="media-container w-full h-96 rounded-2xl reveal">
-              <!-- Space for problem illustration -->
-              <div class="text-center text-[var(--text-secondary)]">
-                <div class="text-6xl mb-4">⚠️</div>
-                <p>Problem Illustration</p>
-                <p class="text-sm">Photographer with failed equipment</p>
-              </div>
+                <img src="image/shooting-on-dual-cards.jpg" alt="Photographer facing equipment failure" class="w-full h-full object-cover">
             </div>
           </div>
 
           <!-- Added customer testimonial section -->
           <div class="testimonial-card max-w-4xl mx-auto text-center reveal">
             <div class="media-container w-24 h-24 rounded-full mx-auto mb-6">
-              <!-- Space for customer photo -->
-              <div class="text-center text-[var(--text-secondary)]">
-                <div class="text-2xl">👤</div>
-              </div>
+              <img src="https://akm-img-a-in.tosshub.com/indiatoday/styles/medium_crop_simple/public/2024-03/ba8adabd-18f3-4cce-b241-c53f9d0e9d90.jpg?VersionId=ClhPzz.3m_3KEPetzguQZKBuK9AfIABS&size=750:*" alt="Aarzoo Khurana, Wildlife Photographer" class="w-full h-full object-cover rounded-full">
             </div>
             <blockquote
               class="text-xl md:text-2xl text-white font-medium mb-6 leading-relaxed"
@@ -286,12 +284,7 @@
             <div
               class="media-container w-full h-96 md:h-[600px] rounded-2xl reveal"
             >
-              <!-- Space for Capture Module image -->
-              <div class="text-center text-[var(--text-secondary)]">
-                <div class="text-6xl mb-4">📷</div>
-                <p>Capture Module</p>
-                <p class="text-sm">Hot shoe mounted device</p>
-              </div>
+              <img src="image/capturemodule.JPG" alt="AVBORT Capture Module" class="w-full h-full object-cover">
             </div>
             <div class="text-left reveal">
               <p class="font-semibold text-[var(--text-secondary)]">01</p>
@@ -344,12 +337,7 @@
             <div
               class="media-container w-full h-96 md:h-[600px] rounded-2xl reveal md:order-1"
             >
-              <!-- Space for Network Relay image -->
-              <div class="text-center text-[var(--text-secondary)]">
-                <div class="text-6xl mb-4">📡</div>
-                <p>Network Relay Station</p>
-                <p class="text-sm">Portable backup hub</p>
-              </div>
+              <img src="image\IMG_1602.JPG" alt="AVBORT Network Relay Station" class="w-full h-full object-cover">
             </div>
           </div>
 
@@ -361,42 +349,32 @@
             <div
               class="media-container w-full max-w-5xl mx-auto h-[400px] rounded-2xl reveal"
             >
-              <!-- Space for workflow diagram -->
-              <div class="text-center text-[var(--text-secondary)]">
-                <div class="text-6xl mb-4">🔄</div>
-                <p>Workflow Diagram</p>
-                <p class="text-sm">
-                  Camera → Capture Module → Network Relay → Cloud
-                </p>
-              </div>
+              <img src="image\workflow.png" alt="Workflow diagram: Camera to Capture Module to Network Relay to Cloud" class="w-full h-full object-contain p-8">
             </div>
           </div>
         </div>
       </section>
-
       <!-- Team Page -->
       <section id="team" class="page">
         <div class="container mx-auto px-6 py-20 md:py-32 text-center">
           <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">
             The Team
           </h2>
-          <!-- Updated team description with expertise focus -->
+          <!-- Updated team description -->
           <p
             class="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto mb-16 reveal"
           >
-            A well-rounded team of four with combined expertise in hardware,
+            A well-rounded team with combined expertise in hardware,
             software, mechatronics, and system design. United by a passion for
             solving complex problems with elegant solutions.
           </p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <!-- Updated grid to md:grid-cols-3 for a 3-person layout -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div class="text-center reveal">
               <div
                 class="media-container w-full rounded-full aspect-square mb-4"
               >
-                <!-- Space for team member photo -->
-                <div class="text-center text-[var(--text-secondary)]">
-                  <div class="text-4xl">👤</div>
-                </div>
+                <img src="image\Aditya img.png" alt="Photo of Aditya Ravindra Dikonda" class="w-full h-full object-cover rounded-full">
               </div>
               <!-- Updated with full names and detailed roles -->
               <h3 class="text-lg font-semibold text-white">
@@ -411,10 +389,7 @@
               <div
                 class="media-container w-full rounded-full aspect-square mb-4"
               >
-                <!-- Space for team member photo -->
-                <div class="text-center text-[var(--text-secondary)]">
-                  <div class="text-4xl">👤</div>
-                </div>
+                 <img src="image\krishna.jpg" alt="Photo of Krishna Yadav" class="w-full h-full object-cover rounded-full">
               </div>
               <h3 class="text-lg font-semibold text-white">Krishna Yadav</h3>
               <p class="text-[var(--text-secondary)] mb-2">Co-founder & COO</p>
@@ -422,29 +397,13 @@
                 Blockchain & Creative Direction
               </p>
             </div>
+            <!-- Aniket Teredesai's section has been removed -->
+            <!-- Updated delay on the last member for smooth animation -->
             <div class="text-center reveal" data-sr-delay="300">
               <div
                 class="media-container w-full rounded-full aspect-square mb-4"
               >
-                <!-- Space for team member photo -->
-                <div class="text-center text-[var(--text-secondary)]">
-                  <div class="text-4xl">👤</div>
-                </div>
-              </div>
-              <h3 class="text-lg font-semibold text-white">Aniket Teredesai</h3>
-              <p class="text-[var(--text-secondary)] mb-2">CTO</p>
-              <p class="text-sm text-[var(--text-secondary)]">
-                System Design & Kernel Development
-              </p>
-            </div>
-            <div class="text-center reveal" data-sr-delay="450">
-              <div
-                class="media-container w-full rounded-full aspect-square mb-4"
-              >
-                <!-- Space for team member photo -->
-                <div class="text-center text-[var(--text-secondary)]">
-                  <div class="text-4xl">👤</div>
-                </div>
+                <img src="image\bobby.jpg" alt="Photo of Bobby Mehta" class="w-full h-full object-cover rounded-full">
               </div>
               <h3 class="text-lg font-semibold text-white">Bobby Mehta</h3>
               <p class="text-[var(--text-secondary)] mb-2">Hardware Head</p>
@@ -455,6 +414,7 @@
           </div>
         </div>
       </section>
+
 
       <!-- Contact Page -->
       <section id="contact" class="page">
@@ -479,27 +439,6 @@
                 business@avbort.com
               </a>
             </div>
-            <!-- Added pricing information -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto reveal"
-            >
-              <div class="feature-card text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">
-                  Wi-Fi Model
-                </h3>
-                <p class="text-3xl font-bold text-white mb-2">₹30,000</p>
-                <p class="text-sm text-[var(--text-secondary)]">
-                  Local network backup
-                </p>
-              </div>
-              <div class="feature-card text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">5G Model</h3>
-                <p class="text-3xl font-bold text-white mb-2">₹60,000</p>
-                <p class="text-sm text-[var(--text-secondary)]">
-                  Anywhere cloud backup
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -511,10 +450,62 @@
         class="container mx-auto px-6 py-6 text-center text-[var(--text-secondary)] text-sm"
       >
         <!-- Updated footer with patent pending status -->
-        <p>&copy; 2024 AVBORT. Patent Pending. All Rights Reserved.</p>
+        <p>&copy; 2025 AVBORT. Patent Pending. All Rights Reserved.</p>
       </div>
     </footer>
 
-    <!-- Removed JavaScript for tab navigation; anchor links now scroll to sections. -->
+    <!-- Animation Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. PAGE LOADING ANIMATION ---
+            const loader = document.getElementById('loader');
+            window.addEventListener('load', () => {
+                loader.classList.add('opacity-0', 'invisible');
+                loader.addEventListener('transitionend', () => loader.remove());
+            });
+
+            // --- 2. SCROLLING ANIMATION ---
+            ScrollReveal().reveal('.reveal', {
+                delay: 200,
+                distance: '50px',
+                origin: 'bottom',
+                opacity: 0,
+                duration: 800,
+                easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                interval: 100,
+                reset: false
+            });
+
+            // --- 3. NAVIGATION HIGHLIGHT ON SCROLL ---
+            const sections = document.querySelectorAll('section.page');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // Trigger when 30% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
   </body>
 </html>
+
